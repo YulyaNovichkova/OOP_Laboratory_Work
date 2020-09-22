@@ -9,7 +9,7 @@ void Breakpoints()
 	double sum = 0.0;
 	for (int i = 0; i < 1000; i++)
 	{
-		sum += add * i; // Postavte uslovnyu tochku ostanova zdes' // TODO Pochemu translitom? Napishi po-russki ili po-angliyski, no ne translit
+		sum += add * i; // Выполнение 1 лабораторной работы по ООП // TODO Pochemu translitom? Napishi po-russki ili po-angliyski, no ne translit // +
 		if (i % 3 == 0)
 		{
 			add *= 1.1;
@@ -22,7 +22,7 @@ void Breakpoints()
 	cout << "Total sum is " << sum << endl;
 }
 
-//Sortirovka vyborom
+// Сортировка выбором
 void SortInt(int* array)
 {
 	int j = 0;
@@ -46,7 +46,7 @@ void SortInt(int* array)
 void SortDouble(double* array)
 {
 	int j = 0;
-	int tmp = 0;
+	double tmp = 0;
 	for (int i = 0; i < 10; i++)
 	{
 		j = i;
@@ -126,26 +126,39 @@ void Foo2(double* a)
 	cout << "New value in pointer address: " << *a << endl;
 }
 
-int IndexOf(int* array, int value) //TODO: как ты определяешь конец массива без переменной с его размером?
-{
+int IndexOf(int* array, int value) //TODO: как ты определяешь конец массива без переменной с его размером? // +
+{	
 	// TODO: зачем переменная index, когда можно использовать i?
-	int index = 0;
+	// +
+	int i = 0;
+	int	length = 0;
+
+	for (int i = 0; array[i]; ++i)
+	{
+		++length;
+	}
+
 	if (array == NULL)
 	{
 		return -1;
 	}
 	else
 	{
-		for (int i = 0; array[i]; ++i)
+		for (int i = 0; length; ++i)
 		{
 			if (array[i] == value)
 			{
-				return index;
-				break; //TODO: после return оператор break не нужен, он уже не будет выполняться
+				return i;
+				//TODO: после return оператор break не нужен, он уже не будет выполняться
+				// +
 			}
-			else ++index;
+			else ++i;
+			if (i > length)
+			{
+				return -1;
+			}
 		}
-	} //TODO: если такого числа нет в массиве, что делать? Функция недописана
+	} //TODO: если такого числа нет в массиве, что делать? Функция недописана // +
 }
 
 int GetLetters(char* string)
@@ -160,10 +173,11 @@ int GetLetters(char* string)
 		for (int i = 0;  string[i]; i++)
 		{
 			//TODO: сделать и для верхнего регистра тоже
-			if (string[i] >= 'a' && string[i] <= 'z')
+			if ((string[i] >= 'a' && string[i] <= 'z') || (string[i] >= 'A' && string[i] <= 'Z'))
 			{
 				++length;
 			}
+
 		}
 	}
 	return length;
@@ -202,4 +216,21 @@ int CountPositiveValues(int* values, int count)
 		}
 	}    
 	return result;
+}
+
+int GetLength(char* string)
+{
+	int length = 0;
+	if (string == NULL)
+	{
+		return -1;
+	}
+	else
+	{
+		for (int i = 0; string[i]; ++i)
+		{
+			++length;
+		}
+	}
+	return length;
 }

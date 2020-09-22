@@ -11,100 +11,118 @@ int main()
 	Breakpoints();
 	system("pause");
 
-	int* array1 = new int[10]; //TODO: Есть же функция для создания случайного массива. Вызывай сразу её. Или просто удалить из main те блоки кода, которые дублируют последующие задачи с функциями.
-
-	for (int i = 0; i < 10; i++)
 	{
-		array1[i] = (rand() % 100);
-	}
+		//TODO: Есть же функция для создания случайного массива. Вызывай сразу её. Или просто удалить из main те блоки кода, которые дублируют последующие задачи с функциями.
+		// +
+		int size = 10;
+		int* array = MakeRandomArray(size);
 
-	cout << "Source array is:" << endl;
-	for (int i = 0; i < 10; i++)
-	{
-		cout << array1[i] << " ";
-	}
-
-	SortInt(array1);
-	cout << endl;
-	cout << "Sorted array is:" << endl;
-	for (int i = 0; i < 10; i++)
-	{
-		cout << array1[i] << " ";
-	}
-	cout << endl;
-	system("pause");
-
-	//TODO: если размер массива используется несколько раз в нескольких местах, его нужно помещать в отдельную переменную
-	double* array2 = new double[12];
-	double searchingValue;
-
-	for (int i = 0; i < 12; i++)
-	{
-		array2[i] = (double)(rand() % 1000) / 10;
-	}
-
-	cout << "Source array is:" << endl;
-	for (int i = 0; i < 12; i++)
-	{
-		cout << array2[i] << " ";
-	}
-	cout << endl;
-
-	cout << "Enter searching value: ";
-	cin >> searchingValue;
-
-	int temp = 0;
-	for (int i = 0; i < 12; i++)
-	{
-		if (array2[i] >= searchingValue)
+		cout << "Source array is:" << endl;
+		for (int i = 0; i < size; i++)
 		{
-			temp++;
+			cout << array[i] << " ";
 		}
+
+		SortInt(array);
+		cout << endl;
+		cout << "Sorted array is:" << endl;
+		for (int i = 0; i < size; i++)
+		{
+			cout << array[i] << " ";
+		}
+		cout << endl;
+
+		delete[] array;
+		system("pause");
 	}
-	cout << "Elements of array more than " << searchingValue << " is: " << temp << endl;
-	cout << endl;
-	system("pause");
 
-	char* arrayChar = new char[8];
-
-	for (int i = 0; i < 8; i++)
 	{
-		cout << "a[" << i << "]: ";
-		cin >> arrayChar[i];
+		//TODO: если размер массива используется несколько раз в нескольких местах, его нужно помещать в отдельную переменную
+		// +
+		int size = 12;
+
+		double* array = new double[size];
+		double searchingValue;
+
+		for (int i = 0; i < size; i++)
+		{
+			array[i] = (double)(rand() % 1000) / 10;
+		}
+
+		cout << "Source array is:" << endl;
+		for (int i = 0; i < size; i++)
+		{
+			cout << array[i] << " ";
+		}
+		cout << endl;
+
+		cout << "Enter searching value: ";
+		cin >> searchingValue;
+
+		int temp = 0;
+		for (int i = 0; i < size; i++)
+		{
+			if (array[i] >= searchingValue)
+			{
+				temp++;
+			}
+		}
+		cout << "Elements of array more than " << searchingValue << " is: " << temp << endl;
+		cout << endl;
+
+		delete[] array;
+		system("pause");
 	}
 
-	cout << "Your array is: " << endl;
-	for (int i = 0; i < 8; i++)
 	{
-		cout << arrayChar[i] << " ";
-	}
-	cout << endl;
+		int size = 8;
+		char* arrayChar = new char[size];
 
-	cout << "All letters in your array: " << endl;
-	for (int i = 0; i < 8; i++)
-	{
-		if (arrayChar[i] >= 'a' && arrayChar[i] <= 'z')
+		for (int i = 0; i < size; i++)
+		{
+			cout << "a[" << i << "]: ";
+			cin >> arrayChar[i];
+		}
+
+		cout << "Your array is: " << endl;
+		for (int i = 0; i < size; i++)
 		{
 			cout << arrayChar[i] << " ";
 		}
+		cout << endl;
+
+		cout << "All letters in your array: " << endl;
+		for (int i = 0; i < size; i++)
+		{
+			if (arrayChar[i] >= 'a' && arrayChar[i] <= 'z')
+			{
+				cout << arrayChar[i] << " ";
+			}
+		}
+		cout << endl;
+
+		delete[] arrayChar;
+		system("pause");
 	}
-	cout << endl;
-	system("pause");
 
-	double* base =  new double;
-	int* exponent = new int;
-	
-	DemoGetPower(*base, *exponent);
-	system("pause");
+	{
+		double* base = new double;
+		int* exponent = new int;
 
-	int value;
-	cout << "Enter value:" << endl;
-	cin >> value;
-	int oldValue = value;
+		DemoGetPower(*base, *exponent);
+		system("pause");
+	}
 
-	RoundToTens(value);
-	cout << "For " << oldValue << " rounded value is " << value << endl;
-	system("pause");
+	{
+		int value;
+		cout << "Enter value:" << endl;
+		cin >> value;
+		int oldValue = value;
+
+		RoundToTens(value);
+		cout << "For " << oldValue << " rounded value is " << value << endl;
+		system("pause");
+	}
 
 	{
 		int a = 5;  int b = 4;  
@@ -250,45 +268,47 @@ int main()
 	}
 
 	{
-	int value;
-	cout << "Enter char array size: ";
-	cin >> value;
+		int value;
+		cout << "Enter char array size: ";
+		cin >> value;
 
-	char* array = new char[value];
-	for (int i = 0; i < value; i++)
-	{
-		cout << "Enter a[" << i << "]: ";
-		cin >> array[i];
+		char* array = new char[value];
+		for (int i = 0; i < value; i++)
+		{
+			cout << "Enter a[" << i << "]: ";
+			cin >> array[i];
+		}
+
+		cout << "Your char array is: " << endl;
+		for (int i = 0; i < value; i++)
+		{
+			cout << array[i] << " ";
+		}
+		cout << endl;
+		system("pause");
 	}
 
-	cout << "Your char array is: " << endl;
-	for (int i = 0; i < value; i++)
 	{
-		cout << array[i] << " ";
-	}
-	}
-	cout << endl;
-	system("pause");
+		int size = 10;
+		double* array = new double[size];
 
-	{
-		double* array = new double[10];
-
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < size; i++)
 		{
 			array[i] = (double)(rand() % 500) / 10;
 		}
 
 		cout << "Array of double::" << endl;
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < size; i++)
 		{
 			cout << array[i] << " ";
 		}
 		cout << endl;
-		//TODO: при вызове этой функции часть значений массива округляется. Поправить ошибку
+		//TODO: при вызове этой функции часть значений массива округляется. Поправить ошибку 
+		// +
 		SortDouble(array);
 		cout << endl;
 		cout << "Sorted array of double:" << endl;
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < size; i++)
 		{
 			cout << array[i] << " ";
 		}
@@ -300,51 +320,66 @@ int main()
 	}
 
 	{
-		//TODO: где освобождение памяти этого массива?
-		int* array = new int[10];
+		//TODO: где освобождение памяти этого массива? 
+		// +
+		int size = 10;
+		int* array = new int[size];
 		int searchingValue;
 
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < size; i++)
 		{
 			array[i] = (rand() % 100);
 		}
 
 		cout << "Int array:" << endl;
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < size; i++)
 		{
 			cout << array[i] << " ";
 		}
 
 		cout << endl << "Enter searching value: ";
 		cin >> searchingValue;
-		//TODO: если искать значения, которых нет в массиве, то возвращается нереальный индекс.
-		cout << "Index of searching value " << searchingValue  << " is: " << IndexOf(array, searchingValue) << endl;
+		//TODO: если искать значения, которых нет в массиве, то возвращается нереальный индекс. 
+		// +
+		if (IndexOf(array, searchingValue) >= 0)
+		{
+			cout << "Index of searching value " << searchingValue << " is: " << IndexOf(array, searchingValue) << endl;
+		}
+		else 
+		{
+			cout << "The value does not exist." << endl;
+		}
 
+		delete[] array;
 		cout << endl;
 		system("pause");
 	}
 
 	{
-		//TODO: где освобождение памяти этого массива?
-		char* array = new char[15];
+		//TODO: где освобождение памяти этого массива? 
+		// +
+		int size = 15;
+		char* array = new char[16];
 
-		for (int i = 0; i < 15; i++)
+		for (int i = 0; i < size; i++)
 		{
 			cout << "a[" << i << "]: ";
 			cin >> array[i];
 		}
 
+		array[15] = '\0';
+
 		cout << "Char array is: " << endl;
-		for (int i = 0; i < 15; i++)
+		for (int i = 0; i < size; i++)
 		{
 			cout << array[i] << " ";
 		}
 		cout << endl;
 		
 		cout << "Letters in array:  " << endl;
-		for (int i = 0; i < 15; i++)
+		for (int i = 0; i < size; i++)
 		{
-			if (array[i] >= 'a' && array[i] <= 'z')
+			if ((array[i] >= 'a' && array[i] <= 'z') || (array[i] >= 'A' && array[i] <= 'Z'))
 			{
 				cout << array[i] << " ";
 			}
@@ -353,41 +388,47 @@ int main()
 
 		cout << "Number of letters in a string: " << GetLetters(array) << endl;
 
+		delete[] array;
 		system("pause");
 	}
 
 	{
-	int arraySize;
-	cout << "Enter char array size: ";
-	cin >> arraySize;
-	//TODO: утечка памяти - созданный внутри функции динамический массив никуда не сохраняется и потом не освобождается!
-	MakeRandomArray(arraySize);
+		int arraySize;
+		cout << "Enter integer array size: ";
+		cin >> arraySize;
+		//TODO: утечка памяти - созданный внутри функции динамический массив никуда не сохраняется и потом не освобождается!
+		// Сохранила массив в переменную и потом работаю с ним, 
+		// если я правильно все поняла, то утечка должна быть устранена.
+		int* array = MakeRandomArray(arraySize);
 
-	cout << "Random array of " << arraySize << ":" << endl;
-	for (int i = 0; i < arraySize; i++)
-	{
-		//TODO: еще одна утечка памяти
-		//TODO: по заданию должен быть массив символов, а у тебя выводит массив чисел
-		cout << *(MakeRandomArray(arraySize)) << " ";
+		cout << "Random array of " << arraySize << ":" << endl;
+		for (int i = 0; i < arraySize; i++)
+		{
+			//TODO: еще одна утечка памяти
+			//TODO: по заданию должен быть массив символов, а у тебя выводит массив чисел
+			// Этот момент решили 22.09.2020 в 19:52 :D
+			cout << array[i] << " ";
+		}
+		//TODO: ??? этой строкой не не освобождаешь память ранее созданных массивов
+		delete [] array;
+
+		cout << endl;
+		system("pause");
 	}
-	//TODO: ??? этой строкой не не освобождаешь память ранее созданных массивов
-	delete MakeRandomArray(arraySize);
-	
-	cout << endl;
-	system("pause");
-	}
 
 	{
-	int count = 15;    
-	int* values = ReadArray(count);    
-	cout << "Count is: " << CountPositiveValues(values, count) << endl;
-	//strochka nije ustranyaet utechku pam'yati
-	delete[] values;
+		cout << "Enter your integer array:" << endl;
+		int count = 15;
+		int* values = ReadArray(count);
+		cout << "Count is: " << CountPositiveValues(values, count) << endl;
+		// Строка для устранения утечки памяти
+		delete[] values;
 
-	count = 20;    
-	values = ReadArray(count);    
-	cout << "Count is: " << CountPositiveValues(values, count) << endl;
-	delete[] values;
+		cout << "Enter your integer array:" << endl;
+		count = 20;
+		values = ReadArray(count);
+		cout << "Count is: " << CountPositiveValues(values, count) << endl;
+		delete[] values;
 	}
 
 	system("pause");
