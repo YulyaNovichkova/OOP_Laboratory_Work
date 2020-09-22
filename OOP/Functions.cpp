@@ -1,4 +1,4 @@
-#include <iostream> 
+﻿#include <iostream> 
 #include "Functions.h"
 
 using namespace std;
@@ -9,7 +9,7 @@ void Breakpoints()
 	double sum = 0.0;
 	for (int i = 0; i < 1000; i++)
 	{
-		sum += add * i; // Postavte uslovnyu tochku ostanova zdes'
+		sum += add * i; // Postavte uslovnyu tochku ostanova zdes' // TODO Pochemu translitom? Napishi po-russki ili po-angliyski, no ne translit
 		if (i % 3 == 0)
 		{
 			add *= 1.1;
@@ -126,8 +126,9 @@ void Foo2(double* a)
 	cout << "New value in pointer address: " << *a << endl;
 }
 
-int IndexOf(int* array, int value)
+int IndexOf(int* array, int value) //TODO: как ты определяешь конец массива без переменной с его размером?
 {
+	// TODO: зачем переменная index, когда можно использовать i?
 	int index = 0;
 	if (array == NULL)
 	{
@@ -140,11 +141,11 @@ int IndexOf(int* array, int value)
 			if (array[i] == value)
 			{
 				return index;
-				break;
+				break; //TODO: после return оператор break не нужен, он уже не будет выполняться
 			}
 			else ++index;
 		}
-	}
+	} //TODO: если такого числа нет в массиве, что делать? Функция недописана
 }
 
 int GetLetters(char* string)
@@ -158,6 +159,7 @@ int GetLetters(char* string)
 	{
 		for (int i = 0;  string[i]; i++)
 		{
+			//TODO: сделать и для верхнего регистра тоже
 			if (string[i] >= 'a' && string[i] <= 'z')
 			{
 				++length;

@@ -1,4 +1,4 @@
-#include <iostream> 
+﻿#include <iostream> 
 #include <time.h>
 #include "Functions.h"
 
@@ -11,7 +11,7 @@ int main()
 	Breakpoints();
 	system("pause");
 
-	int* array1 = new int[10];
+	int* array1 = new int[10]; //TODO: Есть же функция для создания случайного массива. Вызывай сразу её. Или просто удалить из main те блоки кода, которые дублируют последующие задачи с функциями.
 
 	for (int i = 0; i < 10; i++)
 	{
@@ -34,6 +34,7 @@ int main()
 	cout << endl;
 	system("pause");
 
+	//TODO: если размер массива используется несколько раз в нескольких местах, его нужно помещать в отдельную переменную
 	double* array2 = new double[12];
 	double searchingValue;
 
@@ -283,7 +284,7 @@ int main()
 			cout << array[i] << " ";
 		}
 		cout << endl;
-
+		//TODO: при вызове этой функции часть значений массива округляется. Поправить ошибку
 		SortDouble(array);
 		cout << endl;
 		cout << "Sorted array of double:" << endl;
@@ -299,6 +300,7 @@ int main()
 	}
 
 	{
+		//TODO: где освобождение памяти этого массива?
 		int* array = new int[10];
 		int searchingValue;
 
@@ -315,7 +317,7 @@ int main()
 
 		cout << endl << "Enter searching value: ";
 		cin >> searchingValue;
-
+		//TODO: если искать значения, которых нет в массиве, то возвращается нереальный индекс.
 		cout << "Index of searching value " << searchingValue  << " is: " << IndexOf(array, searchingValue) << endl;
 
 		cout << endl;
@@ -323,6 +325,7 @@ int main()
 	}
 
 	{
+		//TODO: где освобождение памяти этого массива?
 		char* array = new char[15];
 
 		for (int i = 0; i < 15; i++)
@@ -357,15 +360,17 @@ int main()
 	int arraySize;
 	cout << "Enter char array size: ";
 	cin >> arraySize;
-
+	//TODO: утечка памяти - созданный внутри функции динамический массив никуда не сохраняется и потом не освобождается!
 	MakeRandomArray(arraySize);
 
 	cout << "Random array of " << arraySize << ":" << endl;
 	for (int i = 0; i < arraySize; i++)
 	{
+		//TODO: еще одна утечка памяти
+		//TODO: по заданию должен быть массив символов, а у тебя выводит массив чисел
 		cout << *(MakeRandomArray(arraySize)) << " ";
 	}
-
+	//TODO: ??? этой строкой не не освобождаешь память ранее созданных массивов
 	delete MakeRandomArray(arraySize);
 	
 	cout << endl;
