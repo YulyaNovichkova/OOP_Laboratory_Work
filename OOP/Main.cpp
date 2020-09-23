@@ -12,8 +12,6 @@ int main()
 	system("pause");
 
 	{
-		//TODO: Есть же функция для создания случайного массива. Вызывай сразу её. Или просто удалить из main те блоки кода, которые дублируют последующие задачи с функциями.
-		// +
 		int size = 10;
 		int* array = MakeRandomArray(size);
 
@@ -37,8 +35,6 @@ int main()
 	}
 
 	{
-		//TODO: если размер массива используется несколько раз в нескольких местах, его нужно помещать в отдельную переменную
-		// +
 		int size = 12;
 
 		double* array = new double[size];
@@ -303,8 +299,6 @@ int main()
 			cout << array[i] << " ";
 		}
 		cout << endl;
-		//TODO: при вызове этой функции часть значений массива округляется. Поправить ошибку 
-		// +
 		SortDouble(array);
 		cout << endl;
 		cout << "Sorted array of double:" << endl;
@@ -320,8 +314,6 @@ int main()
 	}
 
 	{
-		//TODO: где освобождение памяти этого массива? 
-		// +
 		int size = 10;
 		int* array = new int[size];
 		int searchingValue;
@@ -339,8 +331,6 @@ int main()
 
 		cout << endl << "Enter searching value: ";
 		cin >> searchingValue;
-		//TODO: если искать значения, которых нет в массиве, то возвращается нереальный индекс. 
-		// +
 		if (IndexOf(array, searchingValue) >= 0)
 		{
 			cout << "Index of searching value " << searchingValue << " is: " << IndexOf(array, searchingValue) << endl;
@@ -356,8 +346,7 @@ int main()
 	}
 
 	{
-		//TODO: где освобождение памяти этого массива? 
-		// +
+		//TODO: названия переменных вводят заблуждение. Size должна определять весь размер массива, т.е. в данном случае 16. Если хочешь сделать последний символ нулевым, то просто последующие циклы сделай на количество size минус один
 		int size = 15;
 		char* array = new char[16];
 
@@ -396,20 +385,14 @@ int main()
 		int arraySize;
 		cout << "Enter integer array size: ";
 		cin >> arraySize;
-		//TODO: утечка памяти - созданный внутри функции динамический массив никуда не сохраняется и потом не освобождается!
-		// Сохранила массив в переменную и потом работаю с ним, 
-		// если я правильно все поняла, то утечка должна быть устранена.
 		int* array = MakeRandomArray(arraySize);
 
 		cout << "Random array of " << arraySize << ":" << endl;
 		for (int i = 0; i < arraySize; i++)
 		{
-			//TODO: еще одна утечка памяти
-			//TODO: по заданию должен быть массив символов, а у тебя выводит массив чисел
-			// Этот момент решили 22.09.2020 в 19:52 :D
 			cout << array[i] << " ";
 		}
-		//TODO: ??? этой строкой не не освобождаешь память ранее созданных массивов
+		
 		delete [] array;
 
 		cout << endl;
@@ -421,7 +404,7 @@ int main()
 		int count = 15;
 		int* values = ReadArray(count);
 		cout << "Count is: " << CountPositiveValues(values, count) << endl;
-		// Строка для устранения утечки памяти
+
 		delete[] values;
 
 		cout << "Enter your integer array:" << endl;

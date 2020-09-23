@@ -9,7 +9,7 @@ void Breakpoints()
 	double sum = 0.0;
 	for (int i = 0; i < 1000; i++)
 	{
-		sum += add * i; // Выполнение 1 лабораторной работы по ООП // TODO Pochemu translitom? Napishi po-russki ili po-angliyski, no ne translit // +
+		sum += add * i; // Выполнение 1 лабораторной работы по ООП
 		if (i % 3 == 0)
 		{
 			add *= 1.1;
@@ -126,14 +126,14 @@ void Foo2(double* a)
 	cout << "New value in pointer address: " << *a << endl;
 }
 
-int IndexOf(int* array, int value) //TODO: как ты определяешь конец массива без переменной с его размером? // +
+int IndexOf(int* array, int value)
 {	
 	// TODO: зачем переменная index, когда можно использовать i?
-	// +
+	// + - Неправильно исправлено. Теперь у тебя целых три переменных i в функции
 	int i = 0;
 	int	length = 0;
 
-	for (int i = 0; array[i]; ++i)
+	for (int i = 0; array[i]; ++i) //TODO: так размер целочисленного массива не определяют! Это работает только для строк
 	{
 		++length;
 	}
@@ -149,16 +149,14 @@ int IndexOf(int* array, int value) //TODO: как ты определяешь к
 			if (array[i] == value)
 			{
 				return i;
-				//TODO: после return оператор break не нужен, он уже не будет выполняться
-				// +
 			}
 			else ++i;
-			if (i > length)
+			if (i > length) //TODO: не нужно городить это условие, которое будет проверяться в КАЖДОЙ итерации. Оператор под условием должен выполниться, если цикл ничего не нашел - следовательно, оператор надо поставить в другое место
 			{
 				return -1;
 			}
 		}
-	} //TODO: если такого числа нет в массиве, что делать? Функция недописана // +
+	}
 }
 
 int GetLetters(char* string)
@@ -172,7 +170,6 @@ int GetLetters(char* string)
 	{
 		for (int i = 0;  string[i]; i++)
 		{
-			//TODO: сделать и для верхнего регистра тоже
 			if ((string[i] >= 'a' && string[i] <= 'z') || (string[i] >= 'A' && string[i] <= 'Z'))
 			{
 				++length;
