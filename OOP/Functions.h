@@ -9,7 +9,7 @@ void RoundToTens(int&);
 void Foo(double);
 void Foo1(double&);
 void Foo2(double*);
-int IndexOf(int*, int);
+int IndexOf(int*, int, int);
 int GetLetters(char*);
 int* MakeRandomArray(int);
 int* ReadArray(int);

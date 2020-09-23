@@ -126,19 +126,8 @@ void Foo2(double* a)
 	cout << "New value in pointer address: " << *a << endl;
 }
 
-int IndexOf(int* array, int value)
+int IndexOf(int* array, int length, int value)
 {	
-	// TODO: зачем переменная index, когда можно использовать i?
-	// + - Неправильно исправлено. Теперь у тебя целых три переменных i в функции
-	// Заменила i на n. Или можно i Заменить на j в циклах
-	int n = 0;
-	int	length = 0;
-
-	for (int i = 0; i < array[i]; ++i) //TODO: так размер целочисленного массива не определяют! Это работает только для строк
-		// Надо было исправить "array[i]" на "i < array[i]"? Потому что нет "\0" символа?
-	{
-		++length;
-	}
 
 	if (array == NULL)
 	{
@@ -150,12 +139,9 @@ int IndexOf(int* array, int value)
 		{
 			if (array[i] == value)
 			{
-				return n;
+				return i;
 			}
-			else ++n;
 		}
-		//TODO: не нужно городить это условие, которое будет проверяться в КАЖДОЙ итерации. Оператор под условием должен выполниться, если цикл ничего не нашел - следовательно, оператор надо поставить в другое место
-		// +
 		return -1;
  	}
 }
