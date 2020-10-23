@@ -7,3 +7,4 @@ void DemoRectangle();
 void DemoFlight();
 void DemoMovie();
 void DemoTime();
+void WrongPointers();

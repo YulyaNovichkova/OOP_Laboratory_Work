@@ -7,91 +7,97 @@ const int coutn = 3;
 
 void DemoRectangle() 
 { 
-	Regtangle regtangle[coutn];
-	for (int i = 0; i < coutn; i++)
-	{
-		cout << "Enter length regtangle (positive number):" << endl;
-		cin >> regtangle[i].Length;
-		cout << "Enter width regtangle (positive number):" << endl;
-		cin >> regtangle[i].Width;
-		cout << "Enter color regtangle:" << endl;
-		cin >> regtangle[i].Color;
-		cout << endl;
-	}
+	Regtangle regtangle;
+	Regtangle* firstPointer = &regtangle;
+	cout << "Enter length regtangle (positive number):" << endl;
+	cin >> firstPointer->Length;
+	cout << "Enter width regtangle (positive number):" << endl;
+	cin >> firstPointer->Width;
+	cout << "Enter color regtangle:" << endl;
+	cin >> firstPointer->Color;
+	cout << endl;
 
-	for (int i = 1; i <= coutn; i++)
-	{
-		cout << i << ". " << "The rectangle has dimensions: "
-			<< regtangle[i].Length << "x" << regtangle[i].Width << endl;
-	}
+
+	cout << "The rectangle has dimensions: "
+		<< firstPointer->Length << "x" << firstPointer->Width << endl << endl;
+
+	Regtangle* secondPointer = &regtangle;
+	cout << "Address first figure: " << firstPointer << endl
+		<< "Address second figure: " << secondPointer << endl << endl;
 } 
 
 void DemoFlight() 
 {
-	Flight flight[coutn];
-	for (int i = 0; i < coutn; i++)
-	{
-		cout << "Enter departure flight:" << endl;
-		cin >> flight[i].Departure;
-		cout << "Enter destination flight:" << endl;
-		cin >> flight[i].Destination;
-		cout << "Enter time flight:" << endl;
-		cin >> flight[i].TimeFlight;
-		cout << endl;
-	}
+	Flight flight;
+	Flight* firstPointer = &flight;
+	cout << "Enter departure flight:" << endl;
+	cin >> firstPointer->Departure;
+	cout << "Enter destination flight:" << endl;
+	cin >> firstPointer->Destination;
+	cout << "Enter time flight:" << endl;
+	cin >> firstPointer->TimeFlight;
+	cout << endl;
 
-	for (int i = 1; i <= coutn; i++)
-	{
-		cout << i << ". " << "Flight " << flight[i].Departure << " - " << flight[i].Destination
-			<< " is on the way " << flight[i].TimeFlight << " minutes" << endl;
-	}
+	cout << "Flight " << firstPointer->Departure << " - " << firstPointer->Destination
+		<< " is on the way " << firstPointer->TimeFlight << " minutes" << endl << endl;
+	
+	Flight* secondPointer = &flight;
+	cout << "Address first figure: " << firstPointer << endl
+		<< "Address second figure: " << secondPointer << endl << endl;
 } 
 
 void DemoMovie() 
 {
-	Movie movie[coutn];
-	for (int i = 0; i < coutn; i++)
-	{
-		cout << "Enter title movie:" << endl;
-		cin >> movie[i].Title;
-		cout << "Enter duration movie:" << endl;
-		cin >> movie[i].Duration;
-		cout << "Enter year movie:" << endl;
-		cin >> movie[i].Year;
-		cout << "Enter genre movie:" << endl;
-		cin >> movie[i].Genre;
-		cout << "Enter raiting movie:" << endl;
-		cin >> movie[i].Raiting;
-		cout << endl;
-	}
+	Movie movie;
+	Movie* firstPointer = &movie;
+	cout << "Enter title movie:" << endl;
+	cin >> firstPointer->Title;
+	cout << "Enter duration movie:" << endl;
+	cin >> firstPointer->Duration;
+	cout << "Enter year movie:" << endl;
+	cin >> firstPointer->Year;
+	cout << "Enter genre movie:" << endl;
+	cin >> firstPointer->Genre;
+	cout << "Enter raiting movie:" << endl;
+	cin >> firstPointer->Raiting;
+	cout << endl;
 
-	for (int i = 1; i <= coutn; i++)
-	{
-		cout << i << ". " << "Title movie: " << movie[i].Title << endl
-			<< "Duration: " << movie[i].Duration << endl
-			<< "Year: " << movie[i].Year << endl
-			<< "Genre: " << movie[i].Genre << endl
-			<< "Raiting: " << movie[i].Raiting << endl;
-	}
+	cout << "Title movie: " << firstPointer->Title << endl
+		<< "Duration: " << firstPointer->Duration << endl
+		<< "Year: " << firstPointer->Year << endl
+		<< "Genre: " << firstPointer->Genre << endl
+		<< "Raiting: " << firstPointer->Raiting << endl << endl;
+
+	Movie* secondPointer = &movie;
+	cout << "Address first figure: " << firstPointer << endl
+		<< "Address second figure: " << secondPointer << endl << endl;
 } 
 
 void DemoTime() 
 {
-	Time time[coutn];
-	for (int i = 0; i < coutn; i++)
-	{
-		cout << "Enter hours (from 0 to 23):" << endl;
-		cin >> time[i].Hours;
-		cout << "Enter minuts (from 0 to 60):" << endl;
-		cin >> time[i].Minuts;
-		cout << "Enter seconds (from 0 to 60):" << endl;
-		cin >> time[i].Seconds;
-		cout << endl;
-	}
+	Time time;
+	Time* firstPointer = &time;
+	cout << "Enter hours (from 0 to 23):" << endl;
+	cin >> firstPointer->Hours;
+	cout << "Enter minuts (from 0 to 60):" << endl;
+	cin >> firstPointer->Minuts;
+	cout << "Enter seconds (from 0 to 60):" << endl;
+	cin >> firstPointer->Seconds;
+	cout << endl;
 
-	for (int i = 1; i <= coutn; i++)
-	{
-		cout << i << ". " << "Time " << time[i].Hours << ":" << time[i].Minuts << ":"
-			<< time[i].Seconds << endl;
-	}
+	cout << "Time " << firstPointer->Hours << ":" << firstPointer->Minuts << ":"
+		<< firstPointer->Seconds << endl << endl;
+
+	Time* secondPointer = &time;
+	cout << "Address first figure: " << firstPointer << endl
+		<< "Address second figure: " << secondPointer << endl << endl;
+}
+
+void WrongPointers()
+{
+	Flight flight;
+	Movie movie;
+
+	Flight* pointerFlight = &flight;
+	Movie* pointerMovie = &movie;
 }
