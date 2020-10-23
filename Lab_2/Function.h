@@ -15,3 +15,6 @@ void DemoReadAndWriteRectangles();
 void Exchange(Rectangle&, Rectangle&);
 void FindRectangle(Rectangle*, int);
 void FindMaxRectangle(Rectangle*, int);
+void DemoDynamicFlight();
+void DemoDynamicFlights();
+void FindShortestFlight(Flight*, int);

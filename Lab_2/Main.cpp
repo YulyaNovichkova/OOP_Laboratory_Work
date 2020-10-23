@@ -10,6 +10,8 @@ int main()
     //DemoMovie();
     //DemoTime();
 
-    DemoReadAndWriteRectangles();
+    //DemoReadAndWriteRectangles();
+
+    DemoDynamicFlights();
     return 0;
 }
