@@ -62,3 +62,12 @@ struct Discipline
 	int Hours;
 	int Assessment;
 };
+
+// Структура Круг 
+struct Circle
+{    
+	double X;            // X-координата центра круга    
+	double Y;            // Y-координата центра круга    
+	double Radius;       // Радиус    
+	string Color;        // Цвет 
+}; 

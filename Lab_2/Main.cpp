@@ -12,6 +12,19 @@ int main()
 
     //DemoReadAndWriteRectangles();
 
-    DemoDynamicFlights();
+    //DemoDynamicFlights();
+
+    Rectangle* rectangle = MakeRectangle(12, 15, "Green");
+    Rectangle* copiedRectangle = CopyRectangle(*rectangle);
+
+    Flight* flight = MakeFlight("Moscow", "Tomsk", 240);
+    Flight* copiedFlight = CopyFlight(*flight);
+
+    Movie* movie = MakeMovie("The Shawshank Redemption", "Drama", 1994, 142, 9.1);
+    Movie* copiedMovie = CopyMovie(*movie);
+
+    Time* clock = MakeTime(16, 53, 28);
+    Time* copiedClock = CopyTime(*clock);
+
     return 0;
 }

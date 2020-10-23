@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Flight.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Main.cpp" />
