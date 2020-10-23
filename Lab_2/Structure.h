@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <iostream>
 #include <string>
+#include "Enumeration.h"
 
 using namespace std;
 
@@ -26,7 +27,7 @@ struct Movie
 	string Title;
 	int Duration;
 	int Year;
-	string Genre;
+	Genre Genre;
 	double Raiting;
 };
 

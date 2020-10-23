@@ -23,22 +23,8 @@ void DemoDynamicFlight()
 void DemoDynamicFlights()
 {
 	Flight* flight = new Flight[4];
-	for (int i = 0; i < 4; i++)
-	{
-		cout << i + 1 << ". "
-		<< "Enter departure flight:" << endl;
-		cin >> flight[i].Departure;
-		cout << "Enter destination flight:" << endl;
-		cin >> flight[i].Destination;
-		cout << "Enter time flight:" << endl;
-		cin >> flight[i].TimeFlight;
-		cout << endl;
-	}
-	for (int i = 0; i < 4; i++)
-	{
-		cout << i + 1 << ". " << "Flight " << flight[i].Departure << " - " << flight[i].Destination
-			<< " is on the way " << flight[i].TimeFlight << " minutes" << endl << endl;
-	}
+
+
 
 	FindShortestFlight(flight, 4);
 

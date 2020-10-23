@@ -57,7 +57,7 @@ void DemoMovie()
 	cout << "Enter year movie:" << endl;
 	cin >> firstPointer->Year;
 	cout << "Enter genre movie:" << endl;
-	cin >> firstPointer->Genre;
+	//cin >> firstPointer->Genre;
 	cout << "Enter raiting movie:" << endl;
 	cin >> firstPointer->Raiting;
 	cout << endl;
@@ -65,7 +65,7 @@ void DemoMovie()
 	cout << "Title movie: " << firstPointer->Title << endl
 		<< "Duration: " << firstPointer->Duration << endl
 		<< "Year: " << firstPointer->Year << endl
-		<< "Genre: " << firstPointer->Genre << endl
+		//<< "Genre: " << firstPointer->Genre << endl
 		<< "Raiting: " << firstPointer->Raiting << endl << endl;
 
 	Movie* secondPointer = &movie;

@@ -70,7 +70,7 @@ Flight* CopyFlight(Flight& flight)
 	return copiedFlight;
 }
 
-Movie* MakeMovie(string title, string genre, int year, int duration, double raiting)
+Movie* MakeMovie(string title, Genre genre, int year, int duration, double raiting)
 {
 	Movie* movie = new Movie();
 	movie->Title = title;
