@@ -37,7 +37,8 @@ void DemoMovieWithGenre()
 		}
 	}
 
-	cout << CountMoviesByGenre(movies, 10, Drama) << endl;
+
+	cout << CountMoviesByGenre(movies, 10, Thriller) << endl;
 
 	movies[3].Title = "Tenet";
 	movies[3].Genre = Thriller;
@@ -47,6 +48,7 @@ void DemoMovieWithGenre()
 
 	Movie* bestMovie = FindBestGenreMovie(movies, 10, Thriller);
 	WriteMovie(bestMovie);
+
 	delete bestMovie;
 	delete[] movies;
 }
@@ -87,4 +89,13 @@ Movie* FindBestGenreMovie(Movie* movies, int count, Genre findGenre)
 	{
 		return &movies[indexRate];
 	}
+}
+
+void WriteMovie(Movie* movie)
+{
+	cout << "Title movie: " << movie->Title << endl
+		<< "Genre: " << movie->Genre << endl
+		<< "Duration: " << movie->Duration << endl
+		<< "Year: " << movie->Year << endl
+		<< "Raiting: " << movie->Raiting << endl << endl;
 }
