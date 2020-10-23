@@ -1,5 +1,6 @@
 #pragma once
 #include "Structure.h"
+#include "Enumeration.h"
 
 void Sort(double*, int);
 void DemoSort();
@@ -29,3 +30,8 @@ Movie* MakeMovie(string, string, int, int, double);
 Movie* CopyMovie(Movie&);
 Time* MakeTime(int, int, int);
 Time* CopyTime(Time&);
+void DemoEnums();
+void WriteColor(Color);
+Color ReadColor();
+int CountRed(Color*, int);
+int CountColor(Color*, int, Color);

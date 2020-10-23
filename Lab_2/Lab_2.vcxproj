@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Enumeration.cpp" />
     <ClCompile Include="Flight.cpp" />
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="Structure.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Enumeration.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Structure.h" />
   </ItemGroup>
