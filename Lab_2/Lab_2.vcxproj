@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Function.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Regtangle.cpp" />
     <ClCompile Include="Structure.cpp" />
   </ItemGroup>
   <ItemGroup>

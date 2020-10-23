@@ -5,7 +5,7 @@
 using namespace std;
 
 // Структура Прямоугольник 
-struct Regtangle
+struct Rectangle
 {
 	double Length;
 	double Width;

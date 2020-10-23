@@ -7,8 +7,8 @@ const int coutn = 3;
 
 void DemoRectangle() 
 { 
-	Regtangle regtangle;
-	Regtangle* firstPointer = &regtangle;
+	Rectangle regtangle;
+	Rectangle* firstPointer = &regtangle;
 	cout << "Enter length regtangle (positive number):" << endl;
 	cin >> firstPointer->Length;
 	cout << "Enter width regtangle (positive number):" << endl;
@@ -21,7 +21,7 @@ void DemoRectangle()
 	cout << "The rectangle has dimensions: "
 		<< firstPointer->Length << "x" << firstPointer->Width << endl << endl;
 
-	Regtangle* secondPointer = &regtangle;
+	Rectangle* secondPointer = &regtangle;
 	cout << "Address first figure: " << firstPointer << endl
 		<< "Address second figure: " << secondPointer << endl << endl;
 } 

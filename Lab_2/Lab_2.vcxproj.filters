@@ -24,6 +24,9 @@
     <ClCompile Include="Structure.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Regtangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Function.h">

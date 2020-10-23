@@ -3,13 +3,13 @@
 
 int main()
 {
-    DemoSort();
+    //DemoSort();
 
-    DemoRectangle();
-    DemoFlight();
-    DemoMovie();
-    DemoTime();
+    //DemoRectangle();
+    //DemoFlight();
+    //DemoMovie();
+    //DemoTime();
 
-
+    DemoReadAndWriteRectangles();
     return 0;
 }
