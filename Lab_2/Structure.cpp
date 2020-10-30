@@ -3,6 +3,7 @@
 
 using namespace std;
 
+//TODO: именование
 const int coutn = 3;
 
 void DemoRectangle() 

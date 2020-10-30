@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Function.h"
-
+//TODO: именование файла
 using namespace std;
-
+//TODO: именование
 const int coutn = 5;
 
 void DemoReadAndWriteRectangles()

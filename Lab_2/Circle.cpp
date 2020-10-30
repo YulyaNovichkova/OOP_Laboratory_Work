@@ -12,6 +12,7 @@ void DemoCircle()
 	Circle* copiedCircle1 = CopyCircle(*circle1);
 	Circle* copiedCircle2 = CopyCircle(*circle2);
 	Circle* copiedCircle3 = CopyCircle(*circle3);
+	//TODO: только не забываем освобождать память созданных объектов. Если объект создан через new, для него должен быть delete
 }
 
 Circle* MakeCircle(double x, double y, double radius, string color)
@@ -33,7 +34,7 @@ Circle* CopyCircle(Circle& circle)
 	copiedCircle->Color = circle.Color;
 	return copiedCircle;
 }
-
+//TODO: эти методы, наверно, правильнее было бы скопировать в собственные cpp-файлы, раз они всё равно созданы
 Rectangle* MakeRectangle(int lenght, int width, string color)
 {
 	Rectangle* rectangle = new Rectangle();
