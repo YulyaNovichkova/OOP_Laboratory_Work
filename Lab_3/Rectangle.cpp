@@ -54,11 +54,11 @@ Rectangle::Rectangle()
 
 void DemoRectangleWithPoint()
 {
-	const int count = 5;
+	const int COUNT = 5;
 	double xCenter = 0.0;
 	double yCenter = 0.0;
 
-	Rectangle* rectangle = new Rectangle[count];
+	Rectangle* rectangle = new Rectangle[COUNT];
 
 	rectangle[0] = Rectangle(25.5, 1.1, 5.0, 10.7);
 	rectangle[1] = Rectangle(50.0, 7.3, 12.0, -10.7);
@@ -66,7 +66,7 @@ void DemoRectangleWithPoint()
 	rectangle[3] = Rectangle(9.2, 23.9, -4.0, 4.8);
 	rectangle[4] = Rectangle(17.9, 38.0, -3.0, -2.1);
 
-	for (int i = 0; i < count; i++)
+	for (int i = 0; i < COUNT; i++)
 	{
 		cout << "X = " << rectangle[i].GetPoint().GetX() << ";" << "\t"
 			<< "Y = " << rectangle[i].GetPoint().GetY() << ";" << "\t"
@@ -76,8 +76,8 @@ void DemoRectangleWithPoint()
 		yCenter += rectangle[i].GetPoint().GetY();
 	}
 
-	xCenter /= count;
-	yCenter /= count;
+	xCenter /= COUNT;
+	yCenter /= COUNT;
 
 	cout << "Xcenter = " << xCenter << ";" << "\t"
 		<< "Ycenter = " << yCenter << endl;

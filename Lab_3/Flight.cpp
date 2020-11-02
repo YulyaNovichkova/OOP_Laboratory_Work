@@ -142,8 +142,8 @@ Flight::Flight()
 
 void DemoFlightWithTime()
 {
-	const int count = 5;
-	Flight* flight = new Flight[count];
+	const int COUNT = 5;
+	Flight* flight = new Flight[COUNT];
 
 	flight[0] = Flight(0001, "Moscow", "Khabarovsk", 2020, 6, 6, 4, 15, 2020, 7, 3, 14, 30);
 	flight[1] = Flight(0002, "Warsaw", "Paris", 2018, 3, 23, 15, 28, 2019, 12, 12, 16, 48);
@@ -151,7 +151,7 @@ void DemoFlightWithTime()
 	flight[3] = Flight(0004, "Tokyo", "Moscow", 2019, 10, 20, 20, 48, 2020, 2, 16, 17, 0);
 	flight[4] = Flight(0005, "Tomsk", "Warsaw", 2019, 7, 5, 1, 13, 2019, 7, 5, 15, 20);
 
-	for (int i = 0; i < count; i++)
+	for (int i = 0; i < COUNT; i++)
 	{
 		cout << endl<< flight[i].GetNumber() << " "
 			<< flight[i].GetDeparture() << "-"
