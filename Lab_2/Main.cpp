@@ -31,5 +31,17 @@ int main()
 
     DemoMovieWithGenre();
     //TODO: и очистку памяти жахнуть для всего, что здесь было создано
+    //+
+    
+    delete rectangle;
+    delete copiedRectangle;
+    delete flight;
+    delete copiedFlight;
+    delete movie;
+    delete copiedMovie;
+    delete clock;
+    delete copiedClock;
+    delete colors;
+
     return 0;
 }

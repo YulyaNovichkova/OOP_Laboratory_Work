@@ -3,6 +3,33 @@
 
 using namespace std;
 
+void DemoMovie()
+{
+	Movie movie;
+	Movie* firstPointer = &movie;
+	cout << "Enter title movie:" << endl;
+	cin >> firstPointer->Title;
+	cout << "Enter duration movie:" << endl;
+	cin >> firstPointer->Duration;
+	cout << "Enter year movie:" << endl;
+	cin >> firstPointer->Year;
+	cout << "Enter genre movie:" << endl;
+	//cin >> firstPointer->Genre;
+	cout << "Enter raiting movie:" << endl;
+	cin >> firstPointer->Raiting;
+	cout << endl;
+
+	cout << "Title movie: " << firstPointer->Title << endl
+		<< "Duration: " << firstPointer->Duration << endl
+		<< "Year: " << firstPointer->Year << endl
+		//<< "Genre: " << firstPointer->Genre << endl
+		<< "Raiting: " << firstPointer->Raiting << endl << endl;
+
+	Movie* secondPointer = &movie;
+	cout << "Address first figure: " << firstPointer << endl
+		<< "Address second figure: " << secondPointer << endl << endl;
+}
+
 void DemoMovieWithGenre()
 {
 	Movie* movie = new Movie;
@@ -98,4 +125,26 @@ void WriteMovie(Movie* movie)
 		<< "Duration: " << movie->Duration << endl
 		<< "Year: " << movie->Year << endl
 		<< "Raiting: " << movie->Raiting << endl << endl;
+}
+
+Movie* MakeMovie(string title, Genre genre, int year, int duration, double raiting)
+{
+	Movie* movie = new Movie();
+	movie->Title = title;
+	movie->Genre = genre;
+	movie->Year = year;
+	movie->Raiting = raiting;
+	movie->Duration = duration;
+	return movie;
+}
+
+Movie* CopyMovie(Movie& movie)
+{
+	Movie* copiedMovie = new Movie();
+	copiedMovie->Title = movie.Title;
+	copiedMovie->Genre = movie.Genre;
+	copiedMovie->Year = movie.Year;
+	copiedMovie->Raiting = movie.Raiting;
+	copiedMovie->Duration = movie.Duration;
+	return copiedMovie;
 }

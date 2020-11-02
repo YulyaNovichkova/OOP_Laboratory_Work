@@ -154,35 +154,35 @@ Song* Band::GetAllGenreSongs(Genre findingGenre, int& allSongsCount)
 
 void DemoBand()
 {
-	const int coutnSongs = 5;
-	const int coutnAlbums = 3;
-	Song* songs1 = new Song[coutnSongs];
+	const int countSongs = 5;
+	const int countAlbums = 3;
+	Song* songs1 = new Song[countSongs];
 	songs1[0] = Song("Fly Me To The Moon", 180, Jazz);
 	songs1[1] = Song("But Not For Me", 145, Jazz);
 	songs1[2] = Song("In A Sentimental Mood", 183, Jazz);
 	songs1[3] = Song("Misty", 194, Jazz);
 	songs1[4] = Song("Summertime", 162, Jazz);
 
-	Song* songs2 = new Song[coutnSongs];
+	Song* songs2 = new Song[countSongs];
 	songs2[0] = Song("Rondo", 279, Classical);
 	songs2[1] = Song("Andante Con Moto", 236, Classical);
 	songs2[2] = Song("Allegro", 240, Classical);
 	songs2[3] = Song("Presto", 199, Classical);
 	songs2[4] = Song("Adagio Sostenuto", 184, Classical);
 
-	Song* songs3 = new Song[coutnSongs];
+	Song* songs3 = new Song[countSongs];
 	songs3[0] = Song("Can You Feel My Heart", 135, Rock);
 	songs3[1] = Song("Medicine", 210, Rock);
 	songs3[2] = Song("Sleepwalking", 120, Rock);
 	songs3[3] = Song("Blasphemy", 156, Rock);
 	songs3[4] = Song("Throne", 150, Rock);
 
-	Album* albums = new Album[coutnAlbums];
-	albums[0] = Album("Old - old jazz", 2019, songs1, coutnSongs);
-	albums[1] = Album("My favorite classic", 1745, songs2, coutnSongs);
-	albums[2] = Album("That’s the Spirit", 2007, songs3, coutnSongs);
+	Album* albums = new Album[countAlbums];
+	albums[0] = Album("Old - old jazz", 2019, songs1, countSongs);
+	albums[1] = Album("My favorite classic", 1745, songs2, countSongs);
+	albums[2] = Album("That’s the Spirit", 2007, songs3, countSongs);
 
-	Band* band = new Band("Amatory", "metal band", albums, coutnAlbums);
+	Band* band = new Band("Amatory", "metal band", albums, countAlbums);
 	Album* findedAlbum = band->FindAlbum(&songs2[1]);
 	Song* findedSong = band->FindSong("Medicine");
 

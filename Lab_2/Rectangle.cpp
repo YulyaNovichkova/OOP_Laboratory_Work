@@ -1,20 +1,43 @@
-#include <iostream>
+﻿#include <iostream>
 #include "Function.h"
-//TODO: ���������� �����
+//TODO: èìåíîâàíèå ôàéëà
+//+
 using namespace std;
-//TODO: ����������
-const int coutn = 5;
+//TODO: èìåíîâàíèå
+//+
+const int COUNT = 5;
+
+void DemoRectangle()
+{
+	Rectangle regtangle;
+	Rectangle* firstPointer = &regtangle;
+	cout << "Enter length regtangle (positive number):" << endl;
+	cin >> firstPointer->Length;
+	cout << "Enter width regtangle (positive number):" << endl;
+	cin >> firstPointer->Width;
+	cout << "Enter color regtangle:" << endl;
+	cin >> firstPointer->Color;
+	cout << endl;
+
+
+	cout << "The rectangle has dimensions: "
+		<< firstPointer->Length << "x" << firstPointer->Width << endl << endl;
+
+	Rectangle* secondPointer = &regtangle;
+	cout << "Address first figure: " << firstPointer << endl
+		<< "Address second figure: " << secondPointer << endl << endl;
+}
 
 void DemoReadAndWriteRectangles()
 {
-	Rectangle rectangle[coutn];
+	Rectangle rectangle[COUNT];
 
-	for (int i = 0; i < coutn; i++)
+	for (int i = 0; i < COUNT; i++)
 	{
 		ReadRectangle(rectangle[i]);
 	}
 
-	for (int i = 0; i < coutn; i++)
+	for (int i = 0; i < COUNT; i++)
 	{
 		WriteRectangle(rectangle[i]);
 	}
@@ -23,8 +46,8 @@ void DemoReadAndWriteRectangles()
 	WriteRectangle(rectangle[0]);
 	WriteRectangle(rectangle[1]);
 
-	FindRectangle(rectangle, coutn);
-	FindMaxRectangle(rectangle, coutn);
+	FindRectangle(rectangle, COUNT);
+	FindMaxRectangle(rectangle, COUNT);
 }
 
 void WriteRectangle(Rectangle& rectangle)
@@ -84,4 +107,24 @@ void FindMaxRectangle(Rectangle* rectangles, int count)
 
 	cout << "The rectangle with the maximum area is: "
 		<< rectangles[index].Length << "x" << rectangles[index].Width << endl;
+}
+
+//TODO: ýòè ìåòîäû, íàâåðíî, ïðàâèëüíåå áûëî áû ñêîïèðîâàòü â ñîáñòâåííûå cpp-ôàéëû, ðàç îíè âñ¸ ðàâíî ñîçäàíû
+//разнесла все по уже имеющимся cpp-файлам
+Rectangle* MakeRectangle(int lenght, int width, string color)
+{
+	Rectangle* rectangle = new Rectangle();
+	rectangle->Length = lenght;
+	rectangle->Width = width;
+	rectangle->Color = color;
+	return rectangle;
+}
+
+Rectangle* CopyRectangle(Rectangle& rectangle)
+{
+	Rectangle* copiedRectangle = new Rectangle();
+	copiedRectangle->Length = rectangle.Length;
+	copiedRectangle->Width = rectangle.Width;
+	copiedRectangle->Color = rectangle.Color;
+	return copiedRectangle;
 }
