@@ -90,7 +90,7 @@ void Flight::SetTimeArrival(int year, int month, int day, int hour, int minute)
 	}
 	else
 	{
-		throw exception("Arrival time is incorrect..");
+		throw exception("An error occurred while adding the send time.");
 	}
 }
 
