@@ -35,8 +35,8 @@ void DemoBook()
 		WriteBookToConsole(book[bookFound]);
 	}
 
-	delete[] book->Authors;
 	delete[] book;
+	delete[] book->Authors;
 }
 
 void ReadBookFromConsole(Book& book)

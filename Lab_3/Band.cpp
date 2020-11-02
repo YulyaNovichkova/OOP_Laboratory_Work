@@ -212,11 +212,13 @@ void DemoBand()
 	Song* allGenreSong = band->GetAllGenreSongs(Rock, allGenreSongCount);
 	WriteAllSongs(allGenreSong, allGenreSongCount);
 
-	delete band;
-	delete[] albums;
 	delete[] songs1;
 	delete[] songs2;
 	delete[] songs3;
+	delete[] albums;
+	delete band;
+	delete[] allSong;
+	delete[] allGenreSong;
 }
 
 void WriteAllSongs(Song* allSongs, int allSongCount)
