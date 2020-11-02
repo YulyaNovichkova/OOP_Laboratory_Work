@@ -50,8 +50,8 @@ Song::Song()
 
 void WriteSong(Song* song)
 {
-	cout << "Title: " << song->GetTitle() << "   "
-		<< "Duration: " << song->GetDuration() << "   "
+	cout << "Title: " << song->GetTitle() << "\t"
+		<< "Duration: " << song->GetDuration() << "\t"
 		<< "Genre: ";
 	switch (song->GetGenre())
 	{

@@ -59,7 +59,7 @@ Album::Album()
 
 void WriteAlbum(Album* album)
 {
-	cout << "Album: " << album->GetAlbumTitle() << "   "
+	cout << endl << "Album: " << album->GetAlbumTitle() << "   "
 		<< "Year of issue: " << album->GetAlbumYear() << endl
 		<< "Songs:" << endl;
 	for (int i = 0; i < album->GetCountSongs(); i++)

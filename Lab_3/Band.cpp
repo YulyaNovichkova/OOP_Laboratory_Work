@@ -101,6 +101,7 @@ Song* Band::GetAllSongs(int& allSongsCount)
 	{
 		allSongsCount += tempAlbum[count].GetCountSongs();
 	}
+
 	Song* allSongs = new Song[allSongsCount];
 	int count = 0;
 	for (int i = 0; i < this->GetCountAlbums(); i++)
@@ -129,6 +130,7 @@ Song* Band::GetAllGenreSongs(Genre findingGenre, int& allSongsCount)
 			}
 		}
 	}
+
 	Song* allGenreSongs = new Song[allSongsCount];
 	int count = 0;
 	for (int i = 0; i < this->GetCountAlbums(); i++)

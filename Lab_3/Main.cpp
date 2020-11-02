@@ -7,10 +7,10 @@
 
 int main()
 {
-    //DemoBook();
-    //DemoRoute();
-    //DemoRectangleWithPoint();
-    //DemoFlightWithTime();
+    DemoBook();
+    DemoRoute();
+    DemoRectangleWithPoint();
+    DemoFlightWithTime();
     DemoBand();
 
     return 0;
