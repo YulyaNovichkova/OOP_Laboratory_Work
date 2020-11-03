@@ -34,7 +34,7 @@ void DemoBook()
 		cout << "Author's book: ";
 		WriteBookToConsole(book[bookFound]);
 	}
-
+	//TODO: ошибка на выполнении
 	delete[] book;
 	delete[] book->Authors;
 }

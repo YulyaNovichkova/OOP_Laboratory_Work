@@ -1,10 +1,8 @@
 ﻿#include <iostream>
 #include "Function.h"
-//TODO: èìåíîâàíèå ôàéëà
-//+
+
 using namespace std;
-//TODO: èìåíîâàíèå
-//+
+
 const int COUNT = 5;
 
 void DemoRectangle()
@@ -109,8 +107,6 @@ void FindMaxRectangle(Rectangle* rectangles, int count)
 		<< rectangles[index].Length << "x" << rectangles[index].Width << endl;
 }
 
-//TODO: ýòè ìåòîäû, íàâåðíî, ïðàâèëüíåå áûëî áû ñêîïèðîâàòü â ñîáñòâåííûå cpp-ôàéëû, ðàç îíè âñ¸ ðàâíî ñîçäàíû
-//разнесла все по уже имеющимся cpp-файлам
 Rectangle* MakeRectangle(int lenght, int width, string color)
 {
 	Rectangle* rectangle = new Rectangle();

@@ -30,8 +30,6 @@ int main()
     cout << CountColor(colors, 6, Purple);
 
     DemoMovieWithGenre();
-    //TODO: и очистку памяти жахнуть для всего, что здесь было создано
-    //+
     
     delete rectangle;
     delete copiedRectangle;

@@ -12,8 +12,6 @@ void DemoCircle()
 	Circle* copiedCircle1 = CopyCircle(*circle1);
 	Circle* copiedCircle2 = CopyCircle(*circle2);
 	Circle* copiedCircle3 = CopyCircle(*circle3);
-	//TODO: только не забываем освобождать память созданных объектов. Если объект создан через new, для него должен быть delete
-	//+
 
 	delete circle1;
 	delete circle2;

@@ -204,8 +204,8 @@ void DemoBand()
 		WriteAlbum(findedAlbum);
 	}
 
-	int allSongCount = 0;
-	Song* allSong = band->GetAllSongs(allSongCount);
+	int allSongCount = 0; //TODO: грамошибока
+	Song* allSong = band->GetAllSongs(allSongCount); //TODO: грамошибка
 	WriteAllSongs(allSong, allSongCount);
 
 	int allGenreSongCount = 0;
