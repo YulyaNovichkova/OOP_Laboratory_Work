@@ -10,14 +10,14 @@ struct Route
 	int Duration;
 	int Frequency;
 	string* StopTitle;
-	int StopCount;
+	int CountStop;
 };
 
 void DemoRoute();
 void ReadRouteFromConsole(Route& route);
 void WriteRouteToConsole(Route& route);
-int FindRouteTo(Route* route, int routeCount, string stopTitle);
+int FindRouteTo(Route* route, int countRoute, string stopTitle);
 void SetRouteNumber(Route& route, int routeNumber);
 void SetRouteDuration(Route& route, int routeDuration);
 void SetRouteFrequency(Route& route, int routeFrequency);
-void SetStopCount(Route& route, int stopCount);
+void SetCountStop(Route& route, int countStop);

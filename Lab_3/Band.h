@@ -30,4 +30,4 @@ public:
 };
 
 void DemoBand();
-void WriteAllSongs(Song* allSongs, int allSongCount);
+void WriteAllSongs(Song* allSongs, int allSongsCount);

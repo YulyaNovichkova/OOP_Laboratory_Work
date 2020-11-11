@@ -5,18 +5,18 @@ void DemoRoute()
 {
 	string stopTitle;
 	int routeFound;
-	int routeCount;
+	int countRoute;
 
 	cout << "Enter the number of routes: ";
-	cin >> routeCount;
+	cin >> countRoute;
 	cin.ignore();
-	Route* route = new Route[routeCount];
+	Route* route = new Route[countRoute];
 
-	for (int i = 0; i < routeCount; i++)
+	for (int i = 0; i < countRoute; i++)
 	{
 		ReadRouteFromConsole(route[i]);
 	}
-	for (int i = 0; i < routeCount; i++)
+	for (int i = 0; i < countRoute; i++)
 	{
 		WriteRouteToConsole(route[i]);
 	}
@@ -24,7 +24,7 @@ void DemoRoute()
 	cout << endl << "Enter the name of the stop to search: ";
 	getline(cin, stopTitle);
 
-	routeFound = FindRouteTo(route, routeCount, stopTitle);
+	routeFound = FindRouteTo(route, countRoute, stopTitle);
 	if (routeFound == -1)
 	{
 		cout << "No route with such a stop." << endl;
@@ -44,7 +44,7 @@ void ReadRouteFromConsole(Route& route)
 	int routeNumber;
 	int routeDuration;
 	int routeFrequency;
-	int stopCount;
+	int countStop;
 
 	cout << endl << "Enter route number: ";
 	cin >> routeNumber;
@@ -59,12 +59,12 @@ void ReadRouteFromConsole(Route& route)
 	SetRouteFrequency(route, routeFrequency);
 
 	cout << "Enter the number of stops: ";
-	cin >> stopCount;
-	SetStopCount(route, stopCount);
-	route.StopTitle = new string[route.StopCount];
+	cin >> countStop;
+	SetCountStop(route, countStop);
+	route.StopTitle = new string[route.CountStop];
 	cin.ignore();
 
-	for (int i = 0; i < route.StopCount; i++)
+	for (int i = 0; i < route.CountStop; i++)
 	{
 		cout << "Enter stop #" << i + 1 << endl;
 		getline(cin, route.StopTitle[i]);
@@ -78,10 +78,10 @@ void WriteRouteToConsole(Route& route)
 	<< " with a frequency of " << route.Frequency << " minutes." << endl;
 	cout << "The route passes through stops: ";
 
-	for (int i = 0; i < route.StopCount; i++)
+	for (int i = 0; i < route.CountStop; i++)
 	{
 		cout << route.StopTitle[i];
-		if (i == route.StopCount - 1)
+		if (i == route.CountStop - 1)
 		{
 			cout << ". ";
 		}
@@ -93,9 +93,9 @@ void WriteRouteToConsole(Route& route)
 	cout << endl;
 }
 
-int FindRouteTo(Route* route, int routeCount, string stopTitle)
+int FindRouteTo(Route* route, int countRoute, string stopTitle)
 {
-	for (int i = 0; i < routeCount; i++)
+	for (int i = 0; i < countRoute; i++)
 	{
 		if (route->StopTitle[i] == stopTitle)
 		{
@@ -132,11 +132,11 @@ void SetRouteFrequency(Route& route, int routeFrequency)
 	route.Frequency = routeFrequency;
 }
 
-void SetStopCount(Route& route, int stopCount)
+void SetCountStop(Route& route, int countStop)
 {
-	if (stopCount < 0)
+	if (countStop < 0)
 	{
 		throw exception("The number of stops must be positive.");
 	}
-	route.StopCount = stopCount;
+	route.CountStop = countStop;
 }

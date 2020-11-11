@@ -1,4 +1,4 @@
-#include "Band.h"
+﻿#include "Band.h"
 
 void Band::SetTitleBand(string title)
 {
@@ -180,7 +180,7 @@ void DemoBand()
 	Album* albums = new Album[COUNT_ALBUMS];
 	albums[0] = Album("Old - old jazz", 2019, songs1, COUNT_SONGS);
 	albums[1] = Album("My favorite classic", 1745, songs2, COUNT_SONGS);
-	albums[2] = Album("That�s the Spirit", 2007, songs3, COUNT_SONGS);
+	albums[2] = Album("That’s the Spirit", 2007, songs3, COUNT_SONGS);
 
 	Band* band = new Band("Amatory", "metal band", albums, COUNT_ALBUMS);
 	Album* findedAlbum = band->FindAlbum(&songs2[1]);
@@ -204,9 +204,9 @@ void DemoBand()
 		WriteAlbum(findedAlbum);
 	}
 
-	int allSongCount = 0; //TODO: �����������
-	Song* allSong = band->GetAllSongs(allSongCount); //TODO: ����������
-	WriteAllSongs(allSong, allSongCount);
+	int allSongsCount = 0; //TODO: ãðàìîøèáîêà //добавила множественное число
+	Song* allSongs = band->GetAllSongs(allSongsCount); //TODO: ãðàìîøèáêà //добавила множественное число
+	WriteAllSongs(allSongs, allSongsCount);
 
 	int allGenreSongCount = 0;
 	Song* allGenreSong = band->GetAllGenreSongs(Rock, allGenreSongCount);
@@ -217,14 +217,14 @@ void DemoBand()
 	delete[] songs3;
 	delete[] albums;
 	delete band;
-	delete[] allSong;
+	delete[] allSongs;
 	delete[] allGenreSong;
 }
 
-void WriteAllSongs(Song* allSongs, int allSongCount)
+void WriteAllSongs(Song* allSongs, int allSongsCount)
 {
 	cout << "All songs:" << endl;
-	for (int i = 0; i < allSongCount; i++)
+	for (int i = 0; i < allSongsCount; i++)
 	{
 		WriteSong(&allSongs[i]);
 	}

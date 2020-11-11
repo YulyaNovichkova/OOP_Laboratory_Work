@@ -8,17 +8,18 @@ struct Book
 {
 	string Title;
 	int PublishYear;
-	int PageCount;//TODO: грамошибка
+	int CountPage;//TODO: грамошибка // +
 	string* Authors;
-	int AuthorCount; //TODO: грамошибка
+	int CountAuthor; //TODO: грамошибка // +
 };
 
 void DemoBook();
 void ReadBookFromConsole(Book& book);
 void WriteBookToConsole(Book& book);
 void SetPublishYear(Book& book, int publishYear);
-void SetPageCount(Book& book, int pageCount); //TODO: грамошибка
-void SetAuthorCount(Book& book, int authorCount); //TODO: грамошибка
-int FindBookByAuthor(Book* books, int booksCount, string author);
+void SetCountPage(Book& book, int countPage); //TODO: грамошибка // + 
+void SetCountAuthor(Book& book, int countAuthor); //TODO: грамошибка // +
+int FindBookByAuthor(Book* books, int countBooks, string author);
 
 //TODO: в разных файлах по разному образуешь имена со словом Count. Должно быть PagesCount, а не PageCount или CountPage. Проверить, поправить везде
+// +
