@@ -1,4 +1,4 @@
-﻿#include "Band.h"
+#include "Band.h"
 
 void Band::SetTitleBand(string title)
 {
@@ -10,13 +10,10 @@ void Band::SetDescriptionBand(string description)
 	this->_description = description;
 }
 
-void Band::SetAlbum(Album* albums)
+void Band::SetAlbum(Album* albums, int countAlbums)
 {
 	this->_albums = albums;
-}
 
-void Band::SetCountAlbums(int countAlbums)
-{
 	if (countAlbums < 0)
 	{
 		throw exception("The number of albums should be positive.");
@@ -48,8 +45,7 @@ Band::Band(string title, string description, Album* albums, int countAlbums)
 {
 	this->SetTitleBand(title);
 	this->SetDescriptionBand(description);
-	this->SetAlbum(albums);
-	this->SetCountAlbums(countAlbums);
+	this->SetAlbum(albums, countAlbums);
 }
 
 Band::Band()
@@ -180,7 +176,7 @@ void DemoBand()
 	Album* albums = new Album[COUNT_ALBUMS];
 	albums[0] = Album("Old - old jazz", 2019, songs1, COUNT_SONGS);
 	albums[1] = Album("My favorite classic", 1745, songs2, COUNT_SONGS);
-	albums[2] = Album("That’s the Spirit", 2007, songs3, COUNT_SONGS);
+	albums[2] = Album("That�s the Spirit", 2007, songs3, COUNT_SONGS);
 
 	Band* band = new Band("Amatory", "metal band", albums, COUNT_ALBUMS);
 	Album* findedAlbum = band->FindAlbum(&songs2[1]);

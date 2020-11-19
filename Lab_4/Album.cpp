@@ -12,13 +12,10 @@ void Album::SetAlbumYear(int year)
 	}
 	this->_year = year;
 }
-void Album::SetAlbumSong(Song* song)
+void Album::SetAlbumSong(Song* song, int countSongs)
 {
 	this->_songs = song;
-}
 
-void Album::SetCountSongs(int countSongs)
-{
 	if (countSongs < 0)
 	{
 		throw exception("The number of songs should be positive.");
@@ -47,8 +44,7 @@ Album::Album(string title, int year, Song* song, int countSongs)
 {
 	this->SetAlbumTitle(title);
 	this->SetAlbumYear(year);
-	this->SetAlbumSong(song);
-	this->SetCountSongs(countSongs);
+	this->SetAlbumSong(song, countSongs);
 }
 
 Album::Album()
