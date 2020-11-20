@@ -54,42 +54,6 @@ Ring::Ring(double externalRadius, double internalRadius, double x, double y)
 	Ring::AllRingsCount++;
 }
 
-void DemoRing()
-{
-	cout << "Number of rings before calling the constructor: " << Ring::GetAllRingsCount() << endl;
-
-	Ring* ring1 = new Ring(10.0, 5.0, 2.0, 3.0);
-	cout << "Radius is " << ring1->GetArea() << endl;
-	cout << "Number of rings after  calling the constructor: " << Ring::GetAllRingsCount() << endl;
-
-	Ring* ring2 = new Ring(8.7, 4.8, 0.0, 0.0);
-	cout << "Radius is " << ring2->GetArea() << endl;
-	cout << "Number of rings after  calling the constructor: " << Ring::GetAllRingsCount() << endl;
-
-	try
-	{
-		Ring* ring3 = new Ring(-10.0, -5.0, 9.0, 4.5);
-	}
-	catch (exception e)
-	{
-		cout << "An exception." << endl;
-	}
-
-	try
-	{
-		Ring* ring4 = new Ring(5.0, 10.0, 0.0, 0.0);
-	}
-	catch (exception e)
-	{
-		cout << "An exception." << endl;
-	}
-	
-	delete ring1;
-	cout << "Number of rings after  calling the destructor: " << Ring::GetAllRingsCount() << endl;
-	delete ring2;
-	cout << "Number of rings after  calling the destructor: " << Ring::GetAllRingsCount() << endl;
-}
-
 int Ring::GetAllRingsCount()
 {
 	return Ring::AllRingsCount;

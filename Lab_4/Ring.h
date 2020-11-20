@@ -23,5 +23,3 @@ public:
 	Ring();
 	~Ring();
 };
-
-void DemoRing();
