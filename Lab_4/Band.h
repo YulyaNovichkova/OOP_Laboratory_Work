@@ -7,16 +7,19 @@ private:
 	string _title;
 	string _description;
 	Album* _albums;
+	//TODO: наоборот, _albumsCount
 	int _countAlbums;
 
 public:
 	void SetTitleBand(string title);
 	void SetDescriptionBand(string description);
+	//TODO: мн. число, порядок слов
 	void SetAlbum(Album* album, int countAlbums);
 
 	string GetTitleBand();
 	string GetDescriptionBand();
 	Album* GetAlbums();
+	//TODO: порядок слов
 	int GetCountAlbums();
 
 	Band(string title, string description, Album* albums, int countAlbums);
