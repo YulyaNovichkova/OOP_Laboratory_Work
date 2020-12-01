@@ -30,9 +30,23 @@ string Person::GetPatronymic()
 	return this->_patronymic;
 }
 
-Person::Person(string name, string surname, string patronymic)
+Person::Person()
 {
-	this->SetName(name);
+	this->_surname = "";
+	this->_name = "";
+	this->_patronymic = "";
+}
+
+Person::Person(string surname, string name, string patronymic)
+{
 	this->SetSurname(surname);
+	this->SetName(name);
 	this->SetPatronymic(patronymic);
+}
+
+void ShowName(Person* person)
+{
+	cout << person->GetSurname() << " " <<
+		person->GetName() << " " <<
+		person->GetPatronymic() << endl;
 }

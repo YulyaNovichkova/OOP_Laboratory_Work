@@ -20,5 +20,7 @@ public:
 	string GetPatronymic();
 
 	Person();
-	Person(string name, string surname, string patronymic);
+	Person(string surname, string name, string patronymic);
 };
+
+	void ShowName(Person* person);
