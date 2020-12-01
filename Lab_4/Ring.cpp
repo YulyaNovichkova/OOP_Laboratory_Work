@@ -16,7 +16,7 @@ void Ring::SetRadius(double externalRadius, double internalRadius)
 		throw exception("The internal radius must always be less than the external radius.");
 	}
 
-	this->_exteranalRadius = externalRadius;
+	this->_externalRadius = externalRadius;
 	this->_internalRadius = internalRadius;
 }
 
@@ -27,7 +27,7 @@ void Ring::SetCenter(double x, double y)
 
 double Ring::GetExternalRadius()
 {
-	return this->_exteranalRadius;
+	return this->_externalRadius;
 }
 
 double Ring::GetInternalRadius()

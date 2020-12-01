@@ -7,22 +7,22 @@ private:
 	string _title;
 	string _description;
 	Album* _albums;
-	//TODO: наоборот, _albumsCount
-	int _countAlbums;
+	//TODO: наоборот, _albumsCount //+
+	int _albumsCount;
 
 public:
 	void SetTitleBand(string title);
 	void SetDescriptionBand(string description);
-	//TODO: мн. число, порядок слов
-	void SetAlbum(Album* album, int countAlbums);
+	//TODO: мн. число, порядок слов //+
+	void SetAlbums(Album* album, int albumsCount);
 
 	string GetTitleBand();
 	string GetDescriptionBand();
 	Album* GetAlbums();
-	//TODO: порядок слов
-	int GetCountAlbums();
+	//TODO: порядок слов //+
+	int GetAlbumsCount();
 
-	Band(string title, string description, Album* albums, int countAlbums);
+	Band(string title, string description, Album* albums, int albumsCount);
 	Band();
 
 	Song* FindSong(string songTitle);

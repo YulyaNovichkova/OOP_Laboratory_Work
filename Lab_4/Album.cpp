@@ -1,4 +1,4 @@
-#include "Album.h"
+﻿#include "Album.h"
 
 void Album::SetAlbumTitle(string title)
 {
@@ -12,15 +12,15 @@ void Album::SetAlbumYear(int year)
 	}
 	this->_year = year;
 }
-void Album::SetAlbumSong(Song* song, int countSongs)
+void Album::SetAlbumSongs(Song* song, int songsСount)
 {
 	this->_songs = song;
 
-	if (countSongs < 0)
+	if (songsСount < 0)
 	{
 		throw exception("The number of songs should be positive.");
 	}
-	this->_countSongs = countSongs;
+	this->_songsСount = songsСount;
 }
 
 string Album::GetAlbumTitle()
@@ -31,20 +31,20 @@ int Album::GetAlbumYear()
 {
 	return this->_year;
 }
-Song* Album::GetSong()
+Song* Album::GetSongs()
 {
 	return this->_songs;
 }
-int Album::GetCountSongs()
+int Album::GetSongsCount()
 {
-	return this->_countSongs;
+	return this->_songsСount;
 }
 
-Album::Album(string title, int year, Song* song, int countSongs)
+Album::Album(string title, int year, Song* song, int songsСount)
 {
 	this->SetAlbumTitle(title);
 	this->SetAlbumYear(year);
-	this->SetAlbumSong(song, countSongs);
+	this->SetAlbumSongs(song, songsСount);
 }
 
 Album::Album()
@@ -52,7 +52,7 @@ Album::Album()
 	this->_title = "";
 	this->_year = 0;
 	this->_songs = nullptr;
-	this->_countSongs = 0;
+	this->_songsСount = 0;
 }
 
 void WriteAlbum(Album* album)
@@ -60,9 +60,9 @@ void WriteAlbum(Album* album)
 	cout << endl << "Album: " << album->GetAlbumTitle() << "   "
 		<< "Year of issue: " << album->GetAlbumYear() << endl
 		<< "Songs:" << endl;
-	for (int i = 0; i < album->GetCountSongs(); i++)
+	for (int i = 0; i < album->GetSongsCount(); i++)
 	{
-		Song* tempSong = album->GetSong();
+		Song* tempSong = album->GetSongs();
 		WriteSong(&tempSong[i]);
 	}
 	cout << endl;

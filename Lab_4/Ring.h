@@ -4,8 +4,8 @@
 class Ring
 {
 private:
-	//TODO: грамошибка
-	double _exteranalRadius;
+	//TODO: грамошибка //+
+	double _externalRadius;
 	double _internalRadius;
 	Point _center;
 	static int AllRingsCount;
@@ -19,8 +19,8 @@ public:
 	Point GetCenter();
 	double GetArea();
 	static int GetAllRingsCount();
-	//TODO: грамошибка
-	Ring(double extarnalRadius, double internalRadius, double x, double y);
+	//TODO: грамошибка //+
+	Ring(double externalRadius, double internalRadius, double x, double y);
 	Ring();
 	~Ring();
 };

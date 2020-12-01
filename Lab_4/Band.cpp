@@ -10,7 +10,7 @@ void Band::SetDescriptionBand(string description)
 	this->_description = description;
 }
 
-void Band::SetAlbum(Album* albums, int countAlbums)
+void Band::SetAlbums(Album* albums, int countAlbums)
 {
 	this->_albums = albums;
 
@@ -18,7 +18,7 @@ void Band::SetAlbum(Album* albums, int countAlbums)
 	{
 		throw exception("The number of albums should be positive.");
 	}
-	this->_countAlbums = countAlbums;
+	this->_albumsCount = countAlbums;
 }
 
 string Band::GetTitleBand()
@@ -36,16 +36,16 @@ Album* Band::GetAlbums()
 	return this->_albums;
 }
 
-int Band::GetCountAlbums()
+int Band::GetAlbumsCount()
 {
-	return this->_countAlbums;
+	return this->_albumsCount;
 }
 
 Band::Band(string title, string description, Album* albums, int countAlbums)
 {
 	this->SetTitleBand(title);
 	this->SetDescriptionBand(description);
-	this->SetAlbum(albums, countAlbums);
+	this->SetAlbums(albums, countAlbums);
 }
 
 Band::Band()
@@ -53,16 +53,16 @@ Band::Band()
 	this->_title = "";
 	this->_description = "";
 	this->_albums = nullptr;
-	this->_countAlbums = 0;
+	this->_albumsCount = 0;
 }
 
 Song* Band::FindSong(string songTitle)
 {
 	Album* tempAlbum = this->GetAlbums();
-	for (int i = 0; i < this->GetCountAlbums(); i++)
+	for (int i = 0; i < this->GetAlbumsCount(); i++)
 	{
-		Song* tempSong = tempAlbum[i].GetSong();
-		for (int j = 0; j < tempAlbum[i].GetCountSongs(); j++)
+		Song* tempSong = tempAlbum[i].GetSongs();
+		for (int j = 0; j < tempAlbum[i].GetSongsCount(); j++)
 		{
 			if (tempSong[j].GetTitle() == songTitle)
 			{
@@ -76,10 +76,10 @@ Song* Band::FindSong(string songTitle)
 Album* Band::FindAlbum(Song* song)
 {
 	Album* tempAlbums = this->GetAlbums();
-	for (int i = 0; i < this->GetCountAlbums(); i++)
+	for (int i = 0; i < this->GetAlbumsCount(); i++)
 	{
-		Song* tempSong = tempAlbums[i].GetSong();
-		for (int j = 0; j < tempAlbums[i].GetCountSongs(); j++)
+		Song* tempSong = tempAlbums[i].GetSongs();
+		for (int j = 0; j < tempAlbums[i].GetSongsCount(); j++)
 		{
 			if (&tempSong[j] == song)
 			{
@@ -93,17 +93,17 @@ Album* Band::FindAlbum(Song* song)
 Song* Band::GetAllSongs(int& allSongsCount)
 {
 	Album* tempAlbum = this->GetAlbums();
-	for (int count = 0; count < this->GetCountAlbums(); count++)
+	for (int count = 0; count < this->GetAlbumsCount(); count++)
 	{
-		allSongsCount += tempAlbum[count].GetCountSongs();
+		allSongsCount += tempAlbum[count].GetSongsCount();
 	}
 
 	Song* allSongs = new Song[allSongsCount];
 	int count = 0;
-	for (int i = 0; i < this->GetCountAlbums(); i++)
+	for (int i = 0; i < this->GetAlbumsCount(); i++)
 	{
-		Song* tempSong = tempAlbum[i].GetSong();
-		for (int j = 0; j < tempAlbum[i].GetCountSongs(); j++)
+		Song* tempSong = tempAlbum[i].GetSongs();
+		for (int j = 0; j < tempAlbum[i].GetSongsCount(); j++)
 		{
 			allSongs[count] = tempSong[j];
 			count++;
@@ -115,10 +115,10 @@ Song* Band::GetAllSongs(int& allSongsCount)
 Song* Band::GetAllGenreSongs(Genre findingGenre, int& allSongsCount)
 {
 	Album* tempAlbum = this->GetAlbums();
-	for (int i = 0; i < this->GetCountAlbums(); i++)
+	for (int i = 0; i < this->GetAlbumsCount(); i++)
 	{
-		Song* tempSong = tempAlbum[i].GetSong();
-		for (int j = 0; j < tempAlbum[i].GetCountSongs(); j++)
+		Song* tempSong = tempAlbum[i].GetSongs();
+		for (int j = 0; j < tempAlbum[i].GetSongsCount(); j++)
 		{
 			if (tempSong[j].GetGenre() == findingGenre)
 			{
@@ -129,10 +129,10 @@ Song* Band::GetAllGenreSongs(Genre findingGenre, int& allSongsCount)
 
 	Song* allGenreSongs = new Song[allSongsCount];
 	int count = 0;
-	for (int i = 0; i < this->GetCountAlbums(); i++)
+	for (int i = 0; i < this->GetAlbumsCount(); i++)
 	{
-		Song* tempSong = tempAlbum[i].GetSong();
-		for (int j = 0; j < tempAlbum[i].GetCountSongs(); j++)
+		Song* tempSong = tempAlbum[i].GetSongs();
+		for (int j = 0; j < tempAlbum[i].GetSongsCount(); j++)
 		{
 			if (tempSong[j].GetGenre() == findingGenre)
 			{

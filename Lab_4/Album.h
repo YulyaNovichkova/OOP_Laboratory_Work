@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "Song.h"
 
 class Album
@@ -7,24 +7,24 @@ private:
 	string _title;
 	int _year;
 	Song* _songs;
-	//TODO: порядок слов
-	int _countSongs;
+	//TODO: ГЇГ®Г°ГїГ¤Г®ГЄ Г±Г«Г®Гў //+
+	int _songsРЎount;
 
 public:
 	void SetAlbumTitle(string title);
 	void SetAlbumYear(int year);
-	//TODO: мн. число, порядок слов
-	void SetAlbumSong(Song* song, int countSongs);
+	//TODO: Г¬Г­. Г·ГЁГ±Г«Г®, ГЇГ®Г°ГїГ¤Г®ГЄ Г±Г«Г®Гў //+
+	void SetAlbumSongs(Song* song, int songsРЎount);
 
 	string GetAlbumTitle();
 	int GetAlbumYear();
-	//TODO: мн. число
-	Song* GetSong();
-	//TODO: порядок слов
-	int GetCountSongs();
+	//TODO: Г¬Г­. Г·ГЁГ±Г«Г® //+
+	Song* GetSongs();
+	//TODO: ГЇГ®Г°ГїГ¤Г®ГЄ Г±Г«Г®Гў //+
+	int GetSongsCount();
 
-	//TODO: мн. число, порядок слов
-	Album(string title, int year, Song* song, int countSongs);
+	//TODO: Г¬Г­. Г·ГЁГ±Г«Г®, ГЇГ®Г°ГїГ¤Г®ГЄ Г±Г«Г®Гў //+
+	Album(string title, int year, Song* song, int songsРЎount);
 	Album();
 };
 
