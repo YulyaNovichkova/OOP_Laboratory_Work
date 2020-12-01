@@ -20,6 +20,11 @@ int Student::GetYear()
 	return this->_year;
 }
 
+Student::Student()
+{
+
+}
+
 Student::Student(string name, string surname, string patronymic, int id, int year) : Person(name, surname, patronymic)
 {
 	this->SetId(id);
