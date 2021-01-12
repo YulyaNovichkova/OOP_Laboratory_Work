@@ -34,7 +34,7 @@ int main()
 
     Post* post = new Post();
 
-    User** users = new User * [] 
+    User** allUsers = new User * [] 
     {   
         new User(100000, "morkovka1995", "1995morkovka"), 
         new User(100001, "ilon_mask", "X æ A-12"), 
@@ -46,36 +46,23 @@ int main()
         new PaidUser(200003, "schdub", "CetyQVID"),
     };
 
-    //PaidUser** paidUsers = new PaidUser * [] 
-    //{   
-    //    new PaidUser(200000, "TheKnyazz", "JHPzPGFG"), 
-    //    new PaidUser(200001, "system_exe", "UgfkDGmU"), 
-    //    new PaidUser(200002, "RazorQ", "TBgRnbCP"), 
-    //    new PaidUser(200003, "schdub", "CetyQVID"), 
-    //};
-
     string login = "megazver";  
     string password = "password";  
-    User* loginedUser = Login(users, 8, login, password);
+    User* loginedUser = Login(allUsers, 8, login, password);
 
-    cout << "Signed in as: " << loginedUser->GetLogin() << endl;   
+    cout << "Signed in as: " << loginedUser->GetLogin() << endl; 
 
-   /* login = "system_exe";  
-    password = "UgfkDGmU";  
-    PaidUser* loginedPaidUser = Login(paidUsers, 4, login, password);
+    login = "system_exe";
+    password = "UgfkDGmU";
+    User* loginedPaidUser = Login(allUsers, 8, login, password);
 
-    cout << "Signed in as: " << loginedPaidUser->GetLogin() << endl; */   
+    cout << "Signed in as: " << loginedPaidUser->GetLogin() << endl;
+
     for (int i = 0; i < 4; i++) 
     { 
-        delete users[i]; 
+        delete allUsers[i];
     }  
-    delete[] users;
-
-    //for (int i = 0; i < 4; i++) 
-    //{
-    //    delete paidUsers[i];
-    //}  
-    //delete[] paidUsers;
+    delete[] allUsers;
 
     return 0;
 }

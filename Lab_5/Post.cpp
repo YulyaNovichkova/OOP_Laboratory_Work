@@ -20,10 +20,7 @@ string Post::GetText()
 	return _text; 
 }
 
-Post::Post()
-{
-
-}
+Post::Post(){}
 
 Post::Post(string title, string text)
 { 

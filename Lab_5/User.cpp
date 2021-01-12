@@ -1,4 +1,5 @@
 #include "User.h"
+#include <regex>
 
 void User::SetId(int id) 
 { 
@@ -7,6 +8,11 @@ void User::SetId(int id)
 
 void User::SetLogin(string login) 
 { 
+	regex symbols("[{}<>@#$%^:*]");
+	if (regex_search(login, symbols))
+	{
+		throw exception("Login isn't correct");
+	}
 	_login = login; 
 }
 
